@@ -1,6 +1,5 @@
-#Structure and Interpretation of Classical Mechanics formatted for Kindle
-
-Slight reformatting of the online SICM using scripts by @twcamper.
+A (so far unsuccessful) attempt to reformat the online SICM for Kindle using
+scripts by @twcamper.
 
 Original pages at
 http://mitpress.mit.edu/sites/default/files/titles/content/sicm/book.html
