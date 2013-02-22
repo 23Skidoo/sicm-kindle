@@ -1,4 +1,5 @@
 require 'properties'
+require 'date'
 
 module Fix
 
@@ -124,5 +125,5 @@ if __FILE__ == $0
   File.open($OPF, "w")        {|f| f.puts bb.opf}     if ARGV.include?("opf")
   
   system("#{$KINDLE_GEN} #{$OPF} -c1 -verbose -o #{$OUTPUT} > #{$LOG}") if ARGV.include?("build")
-  system("mv #{$LOCAL_ROOT}/#{$OUTPUT} #{$LOCAL_ROOT}/..")
+  system("mv #{$LOCAL_ROOT}/#{$OUTPUT} #{$LOCAL_ROOT}/..") if ARGV.include?("build")
 end
