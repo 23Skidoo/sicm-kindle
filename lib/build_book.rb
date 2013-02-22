@@ -109,7 +109,7 @@ class BookBuilder
          <reference type="toc" title="Table of Contents" href="#{$TOC}%23chap_Temp_1"></reference>
          <reference type="start" title="Startup Page" href="book-Z-H-9.html%23start"></reference>
      </guide>
-</package>  
+</package>
     }
   end
 end
@@ -117,13 +117,13 @@ end
 if __FILE__ == $0
 
   Dir.chdir($LOCAL_ROOT)
- # Fix.do
+  Fix.do if ARGV.include?("fix")
 
   bb = BookBuilder.new
-  
+
   File.open($NCX_TOC, "w")    {|f| f.puts bb.ncx_toc} if ARGV.include?("toc")
   File.open($OPF, "w")        {|f| f.puts bb.opf}     if ARGV.include?("opf")
-  
+
   system("#{$KINDLE_GEN} #{$OPF} -c1 -verbose -o #{$OUTPUT} > #{$LOG}") if ARGV.include?("build")
   system("mv #{$LOCAL_ROOT}/#{$OUTPUT} #{$LOCAL_ROOT}/..") if ARGV.include?("build")
 end
