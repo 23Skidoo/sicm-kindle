@@ -77,4 +77,5 @@ background-color: pink;
 color: gray;
 }
 
-
+p { text-indent: 0}
+p.indent { text-indent: 1em}
